@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>table</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="http://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+<div class="table_page">
+  <div class="menu">
+    <h2 class="main"><a href="main_page.html">Достопримечательности Западной Европы</a></h2>
+    <div class="side">
+    <h2><a href="gallery.html">Галерея</a></h2><h2><a href="table_page.html">Список</a></h2>
+    </div>
+  </div>
+</div>
+<div class="forms">
+  <details>
+    <summary>График</summary>
+    <form name="graph">
+      <table>
+        <tbody>
+        <tr>
+          <th>Значениe по оси OX</th>
+          <th>Результат</th>
+        </tr>
+        <tr>
+          <td id="ox">
+            <input type="radio" name="ox" value="country" checked><span>Страна</span><br>
+            <input type="radio" name="ox" value="city"><span>Город</span><br>
+            <input type="radio" name="ox" value="date"><span>Год построения</span><br>
+          </td>
+          <td id="oy">
+            <input type="checkbox" name="oy" value="1"><span>Максимальная посещаемость</span><br>
+            <input type="checkbox" name="oy" value="2"><span>Минимальная посещаемость</span><br>
+            <input type="checkbox" name="oy" value="3"><span>Количество достопримечательностей</span><br>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <input id="drawGraph" class="button" type="button" value="Построить" >
+    </form>
+  </details>
+  <details >
+    <summary>Фильтр</summary>
+    <form id="filter">
+      <p>
+        <label for="name">Название:
+          <input type="text" name="name">
+        </label>
+      </p>
+      <p>
+        <label for="country">Страна:
+          <input type="text" name="country">
+        </label>
+      </p>
+      <p>
+        <label for="city">Город:
+          <input type="text" name="city">
+        </label>
+      </p>
+      <p>
+        <label for="date">Год построения: <span>от</span>
+          <input type="text" name="dateFrom">
+        <span>до</span>
+          <input type="text" name="dateTill">
+        </label>
+      </p>
+      <p>
+        <label for="attendance">Посещаемость (тыс. чел. в год): <span>от</span>
+          <input type="text" name="attendanceFrom">
+        <span>до</span>
+          <input type="text" name="attendanceTill">
+        </label>
+      </p>
+      <input id="filterButton" class="button" type="button" value="Найти">
+    </form>
+  </details>
+  <details>
+    <summary>Сортировка</summary>
+    <form id="sortForm" class="sort">
+      <p>Первый уровень</p>
+      <select id="first_sort">
+        <option value="0">Название</option>
+        <option value="1">Страна</option>
+        <option value="2">Город</option>
+        <option value="3">Год построения</option>
+        <option value="4">Посещаемость (тыс. чел. в год).</option>
+      </select>
+      <div class="checkbox1">
+        <p>по убыванию</p>
+        <input id="checkbox1" type="checkbox"/>
+      </div>
+      <p>Второй уровень</p>
+      <select id="second_sort">
+        <option value="0">Название</option>
+        <option value="1">Страна</option>
+        <option value="2">Город</option>
+        <option value="3">Год построения</option>
+        <option value="4">Посещаемость (тыс. чел. в год)</option>
+        <option hidden selected></option>
+      </select>
+      <div class="checkbox2">
+        <p>по убыванию</p>
+        <input id="checkbox2" type="checkbox"/>
+      </div>
+      <input id="sortButton" class="button" type="button" value="Сортировать">
+    </form>
+  </details>
+</div>
+</body>
+<script src="graph.js"></script>
+<script src="program.js"></script>
+</html>
